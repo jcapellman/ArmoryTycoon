@@ -2,7 +2,7 @@
 
 namespace ArmoryTycoon.lib.DAL.Objects
 {
-    public class SaveGame
+    public class Game
     {
         public string Name { get; set; }
         
@@ -12,12 +12,25 @@ namespace ArmoryTycoon.lib.DAL.Objects
         
         public int Quarter { get; set; }
 
-        public SaveGame()
+        public Game()
         {
             Year = Constants.STARTING_YEAR;
             Quarter = Constants.STARTING_QUARTER;
 
             Cash = Constants.STARTING_CASH;
+        }
+
+        public void NextQuarter()
+        {
+            if (Quarter == 4)
+            {
+                Year++;
+                Quarter = Constants.STARTING_QUARTER;
+            }
+            else
+            {
+                Quarter++;
+            }
         }
     }
 }
