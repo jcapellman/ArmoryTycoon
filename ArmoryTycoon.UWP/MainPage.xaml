@@ -31,6 +31,6 @@
             <Button Grid.Row="2" Content="Options" />
         </Grid>
 
-        <TextBlock Grid.Row="2" Text="Version 0.0.1" Style="{StaticResource BodyTextBlockStyle}" />
+        <TextBlock Grid.Row="2" Text="Version 0.0.1 - (C)2021 Motion Blur Studios, LLC" Style="{StaticResource BodyTextBlockStyle}" />
     </Grid>
 </Page>
