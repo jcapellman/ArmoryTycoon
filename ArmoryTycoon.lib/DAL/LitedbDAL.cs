@@ -8,7 +8,7 @@ using LiteDB;
 
 namespace ArmoryTycoon.lib.DAL
 {
-    public class LiteDB : BaseDAL
+    public class LitedbDAL : BaseDAL
     {
         private const string DB_FILENAME = "game.db";
         
