@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 
 using ArmoryTycoon.lib.DAL.Base;
+using ArmoryTycoon.lib.DAL.Objects;
 
 namespace ArmoryTycoon.UWP.ViewModels
 {
@@ -41,6 +42,8 @@ namespace ArmoryTycoon.UWP.ViewModels
                 ID = a.Key, Name = a.Value
             }).ToList();
         }
+
+        public Game LoadGame(int gameId) => _baseDal.LoadSaveGame(gameId);
 
         public event PropertyChangedEventHandler PropertyChanged;
 
