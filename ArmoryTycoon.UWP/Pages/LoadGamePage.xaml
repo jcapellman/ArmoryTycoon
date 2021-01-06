@@ -33,7 +33,7 @@
 
                         <TextBlock Grid.Column="0" Text="{Binding Name}" />
 
-                        <Button Grid.Column="1" Content="Load Game" />
+                        <Button Grid.Column="1" Content="Load Game" Click="btnLoadGame_OnClick" />
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

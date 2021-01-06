@@ -23,5 +23,12 @@ namespace ArmoryTycoon.UWP.Pages
         {
             Frame.GoBack();
         }
+
+        private void btnLoadGame_OnClick(object sender, RoutedEventArgs e)
+        {
+            var game = Vm.LoadGame(((LoadGameViewModel.LoadGameListing) sender).ID);
+
+            Frame.Navigate(typeof(MainGamePage), game);
+        }
     }
 }
