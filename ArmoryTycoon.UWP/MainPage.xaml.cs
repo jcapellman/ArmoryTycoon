@@ -9,12 +9,17 @@ namespace ArmoryTycoon.UWP
     {
         public MainPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         private void btnLoadGame_OnClick(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(LoadGamePage));
+        }
+
+        private void btnNewGame_OnClick(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(NewGamePage));
         }
     }
 }
