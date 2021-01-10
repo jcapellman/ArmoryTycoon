@@ -1,4 +1,5 @@
-﻿using Windows.UI.Xaml.Controls;
+﻿using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
 using ArmoryTycoon.lib.DAL.Objects;
@@ -23,5 +24,9 @@ namespace ArmoryTycoon.UWP.Pages
 
             Vm.CurrentGame = (Game) e.Parameter;
         }
+
+        private void mfiLoadGame_OnClick(object sender, RoutedEventArgs e) => Frame.Navigate(typeof(LoadGamePage));
+
+        private void mfiExitGame_OnClick(object sender, RoutedEventArgs e) => Frame.Navigate(typeof(MainPage));
     }
 }
