@@ -1,7 +1,6 @@
 ﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-using ArmoryTycoon.lib.DAL;
 using ArmoryTycoon.UWP.ViewModels;
 
 namespace ArmoryTycoon.UWP.Pages
@@ -16,7 +15,7 @@ namespace ArmoryTycoon.UWP.Pages
 
             DataContext = new LoadGameViewModel();
             
-            Vm.Initialize(new LitedbDAL());
+            Vm.Initialize();
         }
 
         private void btnBack_OnClick(object sender, RoutedEventArgs e)

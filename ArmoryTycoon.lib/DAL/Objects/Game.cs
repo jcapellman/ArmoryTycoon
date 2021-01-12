@@ -6,6 +6,8 @@ namespace ArmoryTycoon.lib.DAL.Objects
     {
         public int Id { get; set; }
         
+        public string SaveGameName { get; set; }
+        
         public string Name { get; set; }
         
         public int Cash { get; set; }

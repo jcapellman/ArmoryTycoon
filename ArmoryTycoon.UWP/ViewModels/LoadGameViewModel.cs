@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
-using ArmoryTycoon.lib.DAL.Base;
 using ArmoryTycoon.lib.DAL.Objects;
 
 namespace ArmoryTycoon.UWP.ViewModels
@@ -31,19 +30,15 @@ namespace ArmoryTycoon.UWP.ViewModels
             }
         }
 
-        private BaseDAL _baseDal;
-
-        public void Initialize(BaseDAL baseDal)
+        public void Initialize()
         {
-            _baseDal = baseDal;
-
-            GameListing = _baseDal.GetSaveGameList().Select(a => new LoadGameListing
+            GameListing = App.DAL.GetSaveGameList().Select(a => new LoadGameListing
             {
                 ID = a.Key, Name = a.Value
             }).ToList();
         }
 
-        public Game LoadGame(int gameId) => _baseDal.LoadSaveGame(gameId);
+        public Game LoadGame(int gameId) => App.DAL.LoadSaveGame(gameId);
 
         public event PropertyChangedEventHandler PropertyChanged;
 
