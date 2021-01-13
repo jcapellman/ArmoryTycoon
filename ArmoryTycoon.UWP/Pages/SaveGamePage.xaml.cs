@@ -1,4 +1,7 @@
-﻿using Windows.UI.Xaml;
+﻿using System;
+
+using Windows.UI.Popups;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
@@ -22,19 +25,18 @@ namespace ArmoryTycoon.UWP.Pages
         {
             base.OnNavigatedTo(e);
 
-            Vm.CurrentGame = (Game)e.Parameter;
+            Vm.Initialize((Game)e.Parameter);
         }
         
         private void btnBack_OnClick(object sender, RoutedEventArgs e) => Frame.GoBack();
 
-        private void btnSave_OnClick(object sender, RoutedEventArgs e)
+        private async void btnSave_OnClick(object sender, RoutedEventArgs e)
         {
             var result = Vm.SaveGame();
+            
+            var dShow = new MessageDialog(result ? "Game saved successfully" : "Game failed to save");
 
-            if (result)
-            {
-                // Display
-            }
+            await dShow.ShowAsync();
         }
     }
 }

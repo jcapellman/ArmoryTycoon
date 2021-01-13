@@ -24,18 +24,18 @@ namespace ArmoryTycoon.UWP.ViewModels
 
         public void Initialize(Game currentGame)
         {
-            CurrentGame = currentGame;
+            _currentGame = currentGame;
 
             SaveGameName = currentGame.SaveGameName;
         }
         
-        public Game CurrentGame;
+        private Game _currentGame;
         
         public bool SaveGame()
         {
-            CurrentGame.SaveGameName = SaveGameName;
+            _currentGame.SaveGameName = SaveGameName;
 
-            return App.DAL.SaveNewGame(CurrentGame);
+            return App.DAL.SaveNewGame(_currentGame);
         }
         
         public event PropertyChangedEventHandler PropertyChanged;
