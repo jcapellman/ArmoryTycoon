@@ -5,8 +5,13 @@
     xmlns:local="using:ArmoryTycoon.UWP.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="using:ArmoryTycoon.UWP.ViewModels"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <viewModels:MainGameViewModel />
+    </Page.DataContext>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -14,7 +19,25 @@
             <ColumnDefinition Width=".15*" />
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0"></Grid>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="GAME INFORMATION" Style="{StaticResource HeaderTextBlockStyle}" />
+
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <TextBlock Text="CASH ON HAND" />
+                    <TextBlock Text="{Binding CurrentGame.Cash}" />
+                </StackPanel>
+            </Grid>
+        </Grid>
 
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
