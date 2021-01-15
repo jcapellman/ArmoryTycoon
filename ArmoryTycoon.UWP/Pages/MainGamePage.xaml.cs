@@ -30,5 +30,10 @@ namespace ArmoryTycoon.UWP.Pages
         private void mfiExitGame_OnClick(object sender, RoutedEventArgs e) => Frame.Navigate(typeof(MainPage));
 
         private void mfiSaveGame_OnClick(object sender, RoutedEventArgs e) => Frame.Navigate(typeof(SaveGamePage), Vm.CurrentGame);
+
+        private void btnCompleteTurn_OnClick(object sender, RoutedEventArgs e)
+        {
+            Vm.CompleteTurn();
+        }
     }
 }

@@ -27,5 +27,12 @@ namespace ArmoryTycoon.UWP.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        public void CompleteTurn()
+        {
+            CurrentGame.NextQuarter();
+            
+            OnPropertyChanged(nameof(CurrentGame));
+        }
     }
 }

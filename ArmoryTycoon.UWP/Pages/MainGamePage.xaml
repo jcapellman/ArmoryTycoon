@@ -33,8 +33,20 @@
                 <TextBlock Grid.Row="0" Text="GAME INFORMATION" Style="{StaticResource HeaderTextBlockStyle}" />
 
                 <StackPanel Grid.Row="1" Orientation="Horizontal">
-                    <TextBlock Text="CASH ON HAND" />
-                    <TextBlock Text="{Binding CurrentGame.Cash}" />
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="CASH ON HAND" />
+                        <TextBlock Text="{Binding CurrentGame.Cash}" />
+                    </StackPanel>
+
+                    <StackPanel Margin="20,0,0,0" Orientation="Vertical">
+                        <TextBlock Text="YEAR" />
+                        <TextBlock Text="{Binding CurrentGame.Year}" />
+                    </StackPanel>
+
+                    <StackPanel Margin="20,0,0,0" Orientation="Vertical">
+                        <TextBlock Text="QUARTER" />
+                        <TextBlock Text="{Binding CurrentGame.Quarter}" />
+                    </StackPanel>
                 </StackPanel>
             </Grid>
         </Grid>
@@ -42,12 +54,15 @@
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0" Style="{StaticResource HeaderTextBlockStyle}" Text="Actions" />
 
-            <Button Grid.Row="1" VerticalAlignment="Bottom" Content="Game Options">
+            <Button Grid.Row="1" Content="Complete Turn" Click="btnCompleteTurn_OnClick" />
+
+            <Button Grid.Row="2" VerticalAlignment="Bottom" Content="Game Options">
                 <Button.Flyout>
                     <MenuFlyout>
                         <MenuFlyoutItem Text="Save Game" Click="mfiSaveGame_OnClick" />
