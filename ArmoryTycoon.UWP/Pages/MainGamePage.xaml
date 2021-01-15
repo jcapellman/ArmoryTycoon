@@ -22,6 +22,7 @@
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0">
@@ -48,6 +49,60 @@
                         <TextBlock Text="{Binding CurrentGame.Quarter}" />
                     </StackPanel>
                 </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Style="{StaticResource HeaderTextBlockStyle}" Text="Armory Items" />
+                    <Button Grid.Column="1" HorizontalAlignment="Right" Content="Create New Armory Item" Click="btnNewArmoryItem_OnClick" />
+                </Grid>
+
+                <ListView Grid.Row="1" ItemsSource="{Binding CurrentGame.ArmoryItems}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Grid.Row="0" Text="{Binding Name}" />
+
+                                <Grid Grid.Row="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0" Grid.Column="0" Text="# SOLD" />
+                                    <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding NumberSold}" />
+
+                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="YEAR INTRODUCED" />
+                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding YearIntroduced}" />
+
+                                    <TextBlock Grid.Row="0" Grid.Column="2" Text="PRICE" />
+                                    <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding Price}" />
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </Grid>
         </Grid>
 
