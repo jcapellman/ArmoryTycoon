@@ -10,6 +10,8 @@ namespace ArmoryTycoon.lib.DAL.Objects
         
         public ArmoryItemType ArmoryType { get; set; }
         
+        public ArmoryCalibers Caliber { get; set; }
+        
         public float Price { get; set; }
         
         public int YearIntroduced { get; set; }
