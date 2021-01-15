@@ -1,10 +1,14 @@
-﻿namespace ArmoryTycoon.lib.DAL.Objects
+﻿using ArmoryTycoon.lib.Enums;
+
+namespace ArmoryTycoon.lib.DAL.Objects
 {
     public class ArmoryItem
     {
         public int Id { get; set; }
         
         public string Name { get; set; }
+        
+        public ArmoryItemType ArmoryType { get; set; }
         
         public float Price { get; set; }
         
