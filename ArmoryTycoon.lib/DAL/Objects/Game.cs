@@ -1,4 +1,6 @@
-﻿using ArmoryTycoon.lib.Common;
+﻿using System.Collections.Generic;
+
+using ArmoryTycoon.lib.Common;
 
 namespace ArmoryTycoon.lib.DAL.Objects
 {
@@ -16,15 +18,19 @@ namespace ArmoryTycoon.lib.DAL.Objects
         
         public int Quarter { get; set; }
 
+        public List<ArmoryItem> ArmoryItems { get; set; }
+        
         public Game()
         {
             Year = Constants.STARTING_YEAR;
             Quarter = Constants.STARTING_QUARTER;
 
             Cash = Constants.STARTING_CASH;
+
+            ArmoryItems = new List<ArmoryItem>();
         }
 
-        public void NextQuarter()
+        private void IterateQuarter()
         {
             if (Quarter == 4)
             {
@@ -35,6 +41,13 @@ namespace ArmoryTycoon.lib.DAL.Objects
             {
                 Quarter++;
             }
+        }
+        
+        public void CompleteTurn()
+        {
+            IterateQuarter();
+            
+            
         }
     }
 }
