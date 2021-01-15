@@ -123,6 +123,7 @@
     <Compile Include="Common\Constants.cs" />
     <Compile Include="DAL\Base\BaseDAL.cs" />
     <Compile Include="DAL\LitedbDAL.cs" />
+    <Compile Include="DAL\Objects\ArmoryItem.cs" />
     <Compile Include="DAL\Objects\Game.cs" />
     <Compile Include="GameObjects\Settings.cs" />
     <Compile Include="Managers\GameManager.cs" />

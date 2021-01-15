@@ -30,7 +30,7 @@ namespace ArmoryTycoon.UWP.ViewModels
 
         public void CompleteTurn()
         {
-            CurrentGame.NextQuarter();
+            CurrentGame.CompleteTurn();
             
             OnPropertyChanged(nameof(CurrentGame));
         }

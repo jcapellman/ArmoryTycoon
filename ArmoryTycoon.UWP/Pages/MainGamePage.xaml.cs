@@ -35,5 +35,10 @@ namespace ArmoryTycoon.UWP.Pages
         {
             Vm.CompleteTurn();
         }
+
+        private void btnNewArmoryItem_OnClick(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
