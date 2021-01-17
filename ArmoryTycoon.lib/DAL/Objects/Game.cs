@@ -20,6 +20,8 @@ namespace ArmoryTycoon.lib.DAL.Objects
 
         public List<ArmoryItem> ArmoryItems { get; set; }
         
+        public ManufacturingItem Manufacturing { get; set; }
+        
         public Game()
         {
             Year = Constants.STARTING_YEAR;
@@ -28,6 +30,8 @@ namespace ArmoryTycoon.lib.DAL.Objects
             Cash = Constants.STARTING_CASH;
 
             ArmoryItems = new List<ArmoryItem>();
+
+            Manufacturing = new ManufacturingItem();
         }
 
         private void IterateQuarter()
@@ -46,8 +50,23 @@ namespace ArmoryTycoon.lib.DAL.Objects
         public void CompleteTurn()
         {
             IterateQuarter();
-            
-            
+
+            ManufactureItems();
+        }
+
+        private void ManufactureItems()
+        {
+            foreach (var item in ArmoryItems)
+            {
+                if (item.QuarterlyManufacture == 0)
+                {
+                    continue;
+                }
+
+                Cash -= item.QuarterlyManufacture * item.ManufactureCost;
+            }
+
+            Cash -= Manufacturing.QuarterlyCost;
         }
     }
 }
