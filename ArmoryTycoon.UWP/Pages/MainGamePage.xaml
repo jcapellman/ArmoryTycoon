@@ -133,6 +133,8 @@
 
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
+
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" Style="{StaticResource SubtitleTextBlockStyle}" Text="LEVEL" />
@@ -149,6 +151,16 @@
 
                         <TextBlock Grid.Row="8" Style="{StaticResource SubtitleTextBlockStyle}" Text="QUARTERLY COST" />
                         <TextBlock Grid.Row="9" Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding CurrentGame.Manufacturing.QuarterlyCost}" />
+
+                        <Grid Grid.Row="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0" Text="{Binding UpgradeText}" />
+                            <Button Grid.Column="1" Content="Upgrade Manufacturing Level" IsEnabled="{Binding UpgradeAvailable}" Click="btnUpgradeManufacturing_OnClick" />
+                        </Grid>
                     </Grid>
                 </PivotItem>
 

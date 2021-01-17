@@ -23,6 +23,8 @@ namespace ArmoryTycoon.UWP.Pages
             base.OnNavigatedTo(e);
 
             Vm.CurrentGame = (Game) e.Parameter;
+            
+            Vm.UpdateBindings();
         }
 
         private void mfiLoadGame_OnClick(object sender, RoutedEventArgs e) => Frame.Navigate(typeof(LoadGamePage));
@@ -40,5 +42,7 @@ namespace ArmoryTycoon.UWP.Pages
         {
             
         }
+
+        private void btnUpgradeManufacturing_OnClick(object sender, RoutedEventArgs e) => Vm.UpgradeManufacturing();
     }
 }
