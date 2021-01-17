@@ -117,7 +117,39 @@
                 </PivotItem>
 
                 <PivotItem Header="Manufacturing Plant">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
 
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Style="{StaticResource SubtitleTextBlockStyle}" Text="LEVEL" />
+                        <TextBlock Grid.Row="1" Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding CurrentGame.Manufacturing.Level}" />
+
+                        <TextBlock Grid.Row="2" Style="{StaticResource SubtitleTextBlockStyle}" Text="WORTH" />
+                        <TextBlock Grid.Row="3" Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding CurrentGame.Manufacturing.Worth}" />
+
+                        <TextBlock Grid.Row="4" Style="{StaticResource SubtitleTextBlockStyle}" Text="QUARTERLY THROUGHPUT" />
+                        <TextBlock Grid.Row="5" Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding CurrentGame.Manufacturing.MaxThroughput}" />
+
+                        <TextBlock Grid.Row="6" Style="{StaticResource SubtitleTextBlockStyle}" Text="QUALITY" />
+                        <TextBlock Grid.Row="7" Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding CurrentGame.Manufacturing.MaxQuality}" />
+
+                        <TextBlock Grid.Row="8" Style="{StaticResource SubtitleTextBlockStyle}" Text="QUARTERLY COST" />
+                        <TextBlock Grid.Row="9" Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding CurrentGame.Manufacturing.QuarterlyCost}" />
+                    </Grid>
                 </PivotItem>
 
                 <PivotItem Header="Bank">

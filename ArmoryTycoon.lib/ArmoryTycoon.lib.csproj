@@ -125,6 +125,7 @@
     <Compile Include="DAL\LitedbDAL.cs" />
     <Compile Include="DAL\Objects\ArmoryItem.cs" />
     <Compile Include="DAL\Objects\Game.cs" />
+    <Compile Include="DAL\Objects\ManufacturingItem.cs" />
     <Compile Include="Enums\ArmoryCalibers.cs" />
     <Compile Include="Enums\ArmoryItemType.cs" />
     <Compile Include="GameObjects\Settings.cs" />
