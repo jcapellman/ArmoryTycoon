@@ -12,11 +12,17 @@ namespace ArmoryTycoon.lib.DAL.Objects
         
         public ArmoryCalibers Caliber { get; set; }
         
-        public float Price { get; set; }
+        public int Price { get; set; }
+        
+        public int ManufactureCost { get; set; }
         
         public int YearIntroduced { get; set; }
         
         public int NumberSold { get; set; }
+        
+        public int Inventory { get; set; }
+        
+        public int QuarterlyManufacture { get; set; }
         
         public int Rating_BuildQuality { get; set; }
         
