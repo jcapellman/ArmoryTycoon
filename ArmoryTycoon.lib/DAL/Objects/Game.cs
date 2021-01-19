@@ -19,7 +19,9 @@ namespace ArmoryTycoon.lib.DAL.Objects
         public int Quarter { get; set; }
 
         public List<ArmoryItem> ArmoryItems { get; set; }
-        
+
+        public List<ArmoryItem> DesignArmoryItems { get; set; }
+
         public ManufacturingItem Manufacturing { get; set; }
         
         public Game()
@@ -31,6 +33,8 @@ namespace ArmoryTycoon.lib.DAL.Objects
 
             ArmoryItems = new List<ArmoryItem>();
 
+            DesignArmoryItems = new List<ArmoryItem>();
+            
             Manufacturing = new ManufacturingItem();
         }
 
@@ -67,6 +71,11 @@ namespace ArmoryTycoon.lib.DAL.Objects
             }
 
             Cash -= Manufacturing.QuarterlyCost;
+        }
+
+        public void AddArmoryItem(ArmoryItem newArmoryItem)
+        {
+            DesignArmoryItems.Add(newArmoryItem);
         }
     }
 }
