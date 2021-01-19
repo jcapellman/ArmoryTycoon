@@ -1,4 +1,7 @@
-﻿using Windows.UI.Xaml;
+﻿using System;
+
+using Windows.UI.Popups;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
@@ -37,12 +40,16 @@ namespace ArmoryTycoon.UWP.Pages
         {
             Vm.CompleteTurn();
         }
-
-        private void btnNewArmoryItem_OnClick(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
+        
         private void btnUpgradeManufacturing_OnClick(object sender, RoutedEventArgs e) => Vm.UpgradeManufacturing();
+
+        private async void btnAddArmoryItem_OnClick(object sender, RoutedEventArgs e)
+        {
+            Vm.AddArmoryItem();
+
+            var md = new MessageDialog("Successfully added armory item");
+
+            await md.ShowAsync();
+        }
     }
 }

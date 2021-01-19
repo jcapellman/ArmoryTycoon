@@ -74,7 +74,7 @@
                 </PivotItem>
 
                 <PivotItem Header="Armory Items">
-                    <ListView ItemsSource="{Binding CurrentGame.ArmoryItems}">
+                    <ListView SelectedItem="{Binding SelectedArmoryItem}" ItemsSource="{Binding CurrentGame.ArmoryItems}">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Grid>
@@ -112,8 +112,54 @@
                         </ListView>
                 </PivotItem>
 
-                <PivotItem Header="New Armory Item">
+                <PivotItem Header="Design Armory Items">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
 
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0" Text="Items" />
+                            <ListView Grid.Row="1" ItemsSource="{Binding CurrentGame.DesignArmoryItems}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Name}" />
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Grid>
+
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="{Binding SelectedArmoryItem.Name}" />
+
+
+                        </Grid>
+                    </Grid>
+                </PivotItem>
+                
+                <PivotItem Header="Design New Armory Item">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Name" />
+                        <TextBox Text="{Binding NewArmoryItem.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <TextBlock Text="Armory Type" />
+                        <TextBox Text="{Binding NewArmoryItem.ArmoryType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <TextBlock Text="Caliber" />
+                        <TextBox Text="{Binding NewArmoryItem.Caliber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <Button Click="btnAddArmoryItem_OnClick" Content="Add Armory Item" />
+                    </StackPanel>
                 </PivotItem>
 
                 <PivotItem Header="Manufacturing Plant">
