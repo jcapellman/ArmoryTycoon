@@ -156,7 +156,7 @@
                         <TextBox Text="{Binding NewArmoryItem.ArmoryType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                         <TextBlock Text="Caliber" />
-                        <TextBox Text="{Binding NewArmoryItem.Caliber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <ComboBox ItemsSource="{Binding Calibers, Mode=TwoWay}" SelectedItem="{Binding SelectedCaliber, Mode=TwoWay}" />
 
                         <Button Click="btnAddArmoryItem_OnClick" Content="Add Armory Item" />
                     </StackPanel>

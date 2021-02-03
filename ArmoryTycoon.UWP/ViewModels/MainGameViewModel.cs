@@ -1,12 +1,44 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 
 using ArmoryTycoon.lib.DAL.Objects;
+using ArmoryTycoon.lib.Enums;
 
 namespace ArmoryTycoon.UWP.ViewModels
 {
     public class MainGameViewModel : INotifyPropertyChanged
     {
+        private List<string> _calibers;
+
+        public List<string> Calibers
+        {
+            get => _calibers;
+
+            set
+            {
+                _calibers = value;
+
+                OnPropertyChanged();
+            }
+        }
+
+        private string _selectedCaliber;
+
+        public string SelectedCaliber
+        {
+            get => _selectedCaliber;
+
+            set
+            {
+                _selectedCaliber = value;
+
+                OnPropertyChanged();
+            }
+        }
+
         private Game _currentGame;
 
         public Game CurrentGame
@@ -100,6 +132,8 @@ namespace ArmoryTycoon.UWP.ViewModels
 
         public void AddArmoryItem()
         {
+            NewArmoryItem.Caliber = Enum.Parse<ArmoryCalibers>(SelectedCaliber);
+
             CurrentGame.AddArmoryItem(NewArmoryItem);
             
             UpdateBindings();
@@ -119,6 +153,13 @@ namespace ArmoryTycoon.UWP.ViewModels
             CurrentGame.CompleteTurn();
 
             UpdateBindings();
+        }
+
+        public MainGameViewModel()
+        {
+            Calibers = Enum.GetNames(typeof(ArmoryCalibers)).ToList();
+
+            SelectedCaliber = Calibers.FirstOrDefault();
         }
     }
 }
